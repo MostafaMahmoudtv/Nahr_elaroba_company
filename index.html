@@ -21,8 +21,8 @@
           <!-- Right side -->
           <div class="top-bar-info">
             <ul>
-              <li><i class="fas fa-mobile-alt"></i>(+966) 0535053333</li>
-              <li><i class="fas fa-envelope"></i>ahmad123555@gmail.com</li>
+              <li><i class="fas fa-mobile-alt"></i>(+966) 0500073081</li>
+              <li><i class="fas fa-envelope"></i>info@cna.sa</li>
             </ul>
           </div>
           <!-- Left side -->
@@ -62,10 +62,7 @@
             <a href="#projects_contaienr" data-ar="المشاريع" data-en="Projects"
               >المشاريع</a
             >
-            <a
-              href="#contact-info"
-              data-ar="تواصل معنا"
-              data-en="Contact Us"
+            <a href="#contact-info" data-ar="تواصل معنا" data-en="Contact Us"
               >تواصل معنا</a
             >
           </div>
@@ -967,7 +964,7 @@
                 البريد الإلكتروني
               </h3>
               <p>
-                <a href="mailto:ahmad123555@gmail.com">ahmad123555@gmail.com</a>
+                <a href="mailto:info@cna.sa">info@cna.sa</a>
               </p>
             </div>
 
@@ -976,12 +973,80 @@
                 <i class="fas fa-phone"></i>
               </div>
               <h3 data-ar="الهاتف" data-en="Phone">الهاتف</h3>
-              <p><a href="tel:0535053333">0535053333</a></p>
+              <p><a href="tel:0535053333">0500073081</a></p>
             </div>
           </div>
         </div>
       </section>
+      <div class="contact-form-container">
+        <h2 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h2>
 
+        <form
+          class="contact-form"
+          action="https://formsubmit.co/info@cna.sa"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="رسالة جديدة من موقع نهر العروبة"
+          />
+          <input type="hidden" name="_template" value="table" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://yourdomain.com/thank-you.html"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="الاسم"
+              data-ar-placeholder="الاسم"
+              data-en-placeholder="Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="البريد الإلكتروني"
+              data-ar-placeholder="البريد الإلكتروني"
+              data-en-placeholder="Email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="phone"
+              placeholder="رقم الجوال"
+              data-ar-placeholder="رقم الجوال"
+              data-en-placeholder="Phone Number"
+            />
+          </div>
+
+          <div class="form-group">
+            <textarea
+              name="message"
+              placeholder="اكتب رسالتك"
+              data-ar-placeholder="اكتب رسالتك"
+              data-en-placeholder="Write your message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" data-ar="إرسال" data-en="Send">إرسال</button>
+        </form>
+
+        <div id="form-message" class="form-message"></div>
+      </div>
       <footer
         data-ar="© 2025 شركة نهر العروبة المحدودة – جميع الحقوق محفوظة"
         data-en="© 2025 Nahr Al Urubah Limited Company – All rights reserved"
@@ -992,6 +1057,14 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector(".contact-form");
+        const messageDiv = document.getElementById("form-message");
+
+        form.addEventListener("submit", function (event) {
+          messageDiv.textContent = "جاري إرسال الرسالة...";
+          messageDiv.className = "form-message";
+          messageDiv.style.display = "block";
+        });
         const languageSwitcher = document.getElementById("languageSwitcher");
         const languageText = languageSwitcher.querySelector("span");
         const htmlElement = document.documentElement;

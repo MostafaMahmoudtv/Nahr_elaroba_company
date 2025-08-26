@@ -1,3 +1,96 @@
 
       
-        
+        <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج الاتصال - شركة نهر العروبة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #2d8c8c;
+            --accent-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --gray-color: #6c757d;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Tajawal", sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+           
+            
+            // للتبديل بين اللغات (لأغراض العرض فقط)
+            const toggleLang = document.createElement('button');
+            toggleLang.textContent = 'English';
+            toggleLang.style.position = 'absolute';
+            toggleLang.style.top = '20px';
+            toggleLang.style.right = '20px';
+            toggleLang.style.padding = '10px';
+            toggleLang.style.background = 'var(--primary-color)';
+            toggleLang.style.color = 'white';
+            toggleLang.style.border = 'none';
+            toggleLang.style.borderRadius = '5px';
+            toggleLang.style.cursor = 'pointer';
+            
+            document.body.appendChild(toggleLang);
+            
+            let isEnglish = false;
+            toggleLang.addEventListener('click', function() {
+                isEnglish = !isEnglish;
+                
+                if (isEnglish) {
+                    document.body.setAttribute('dir', 'ltr');
+                    toggleLang.textContent = 'العربية';
+                    
+                    // تغيير النصوص إلى الإنجليزية
+                    document.querySelector('h2').textContent = document.querySelector('h2').getAttribute('data-en');
+                    document.querySelector('button[type="submit"]').textContent = document.querySelector('button[type="submit"]').getAttribute('data-en');
+                    
+                    document.querySelector('input[name="name"]').placeholder = document.querySelector('input[name="name"]').getAttribute('data-en-placeholder');
+                    document.querySelector('input[name="email"]').placeholder = document.querySelector('input[name="email"]').getAttribute('data-en-placeholder');
+                    document.querySelector('input[name="phone"]').placeholder = document.querySelector('input[name="phone"]').getAttribute('data-en-placeholder');
+                    document.querySelector('textarea[name="message"]').placeholder = document.querySelector('textarea[name="message"]').getAttribute('data-en-placeholder');
+                } else {
+                    document.body.setAttribute('dir', 'rtl');
+                    toggleLang.textContent = 'English';
+                    
+                    // تغيير النصوص إلى العربية
+                    document.querySelector('h2').textContent = document.querySelector('h2').getAttribute('data-ar');
+                    document.querySelector('button[type="submit"]').textContent = document.querySelector('button[type="submit"]').getAttribute('data-ar');
+                    
+                    document.querySelector('input[name="name"]').placeholder = document.querySelector('input[name="name"]').getAttribute('data-ar-placeholder');
+                    document.querySelector('input[name="email"]').placeholder = document.querySelector('input[name="email"]').getAttribute('data-ar-placeholder');
+                    document.querySelector('input[name="phone"]').placeholder = document.querySelector('input[name="phone"]').getAttribute('data-ar-placeholder');
+                    document.querySelector('textarea[name="message"]').placeholder = document.querySelector('textarea[name="message"]').getAttribute('data-ar-placeholder');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
